@@ -509,14 +509,10 @@ Form Order • Bouquet Custom • Cisarua Puncak
 
 
 <form
-class="form"
-id="orderForm"
-
-method="GET"
-
-target="submitFrame"
-
-action="https://script.google.com/macros/s/AKfycbxtG4SYgxSyx7JKhnJAJmXQ5YbIHaUU3iwEkJpETgT0HYmZveoJjoQTWBSCLhp5bAE/exec"
+  id="orderForm"
+  method="GET"
+  action="https://script.google.com/macros/s/AKfycbxtG4SYgxSyx7JKhnJAJmXQ5YbIHaUU3iwEkJpETgT0HYmZveoJjoQTWBSCLhp5bAE/exec"
+  target="googleSheetFrame"
 >
 
 
@@ -919,6 +915,11 @@ Pesanan diproses setelah DP diterima.
 
 
 </form>
+   <iframe
+  name="googleSheetFrame"
+  id="googleSheetFrame"
+  style="display:none;"
+></iframe>
 
 
 </div>
