@@ -1,258 +1,303 @@
 <!doctype html>
 <html lang="id">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#58734A">
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1"
+>
+
+<meta
+  name="theme-color"
+  content="#58734A"
+>
+
 <title>Hafa Florist - Form Order</title>
 
+
 <style>
+
 :root{
---g:#58734A;
---d:#40583A;
---s:#EEF4E9;
---gold:#C8A85B;
---t:#263126;
---m:#718071;
---b:#DCE5D7
+  --g:#58734A;
+  --d:#40583A;
+  --s:#EEF4E9;
+  --gold:#C8A85B;
+  --t:#263126;
+  --m:#718071;
+  --b:#DCE5D7;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
-margin:0;
-padding:15px 9px 45px;
-font-family:Arial,sans-serif;
-color:var(--t);
-background:linear-gradient(135deg,#F8F8F1,#EDF3E8)
+  margin:0;
+  padding:15px 9px 45px;
+  font-family:Arial,sans-serif;
+  color:var(--t);
+  background:
+  linear-gradient(
+    135deg,
+    #F8F8F1,
+    #EDF3E8
+  );
 }
 
 .wrap{
-max-width:760px;
-margin:auto
+  max-width:760px;
+  margin:auto;
 }
 
 .card{
-background:#fff;
-border-radius:27px;
-overflow:hidden;
-box-shadow:0 18px 55px #35483022
+  background:#fff;
+  border-radius:27px;
+  overflow:hidden;
+  box-shadow:
+  0 18px 55px #35483022;
 }
 
 .head{
-padding:29px 18px;
-text-align:center;
-color:#fff;
-background:linear-gradient(135deg,var(--d),var(--g))
+  padding:29px 18px;
+  text-align:center;
+  color:#fff;
+  background:
+  linear-gradient(
+    135deg,
+    var(--d),
+    var(--g)
+  );
 }
 
 .logo{
-font-size:29px;
-font-weight:800
+  font-size:29px;
+  font-weight:800;
 }
 
 .logo span{
-color:#F5D98A
+  color:#F5D98A;
 }
 
 .sub{
-font-size:13px;
-margin-top:7px
+  font-size:13px;
+  margin-top:7px;
 }
 
 .form{
-padding:23px
+  padding:23px;
 }
 
 .sec{
-padding:18px;
-margin-bottom:18px;
-border:1px solid var(--b);
-border-radius:19px
+  padding:18px;
+  margin-bottom:18px;
+  border:1px solid var(--b);
+  border-radius:19px;
 }
 
 .sec.pay{
-background:linear-gradient(135deg,#F4F8EF,#FFFDF7)
+  background:
+  linear-gradient(
+    135deg,
+    #F4F8EF,
+    #FFFDF7
+  );
 }
 
 h3{
-margin:0 0 16px;
-color:var(--d);
-font-size:16px
+  margin:0 0 16px;
+  color:var(--d);
+  font-size:16px;
 }
 
 .grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:13px
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
 }
 
 .full{
-grid-column:1/-1
+  grid-column:1/-1;
 }
 
 label{
-display:block;
-margin-bottom:6px;
-font-size:13px;
-font-weight:700;
-color:#4d5c4c
+  display:block;
+  margin-bottom:6px;
+  font-size:13px;
+  font-weight:700;
+  color:#4d5c4c;
 }
 
-input,select,textarea{
-width:100%;
-padding:12px;
-border:1px solid #D9E1D4;
-border-radius:11px;
-background:#FCFDFB;
-font-size:14px;
-outline:0
+input,
+select,
+textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #D9E1D4;
+  border-radius:11px;
+  background:#FCFDFB;
+  font-size:14px;
+  outline:0;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
-border-color:var(--g);
-box-shadow:0 0 0 3px #58734a1a
+  border-color:var(--g);
+  box-shadow:
+  0 0 0 3px #58734a1a;
 }
 
 textarea{
-min-height:82px;
-resize:vertical
+  min-height:82px;
+  resize:vertical;
 }
 
 .money{
-position:relative
+  position:relative;
 }
 
 .money span{
-position:absolute;
-left:12px;
-top:50%;
-transform:translateY(-50%);
-font-weight:700;
-color:var(--m);
-font-size:13px
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  font-weight:700;
+  color:var(--m);
+  font-size:13px;
 }
 
 .money input{
-padding-left:39px
+  padding-left:39px;
 }
 
 .row{
-display:flex;
-justify-content:space-between;
-padding:10px 0;
-border-bottom:1px dashed #D9E2D4;
-font-size:14px
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px dashed #D9E2D4;
+  font-size:14px;
 }
 
 .rem{
-margin-top:11px;
-padding:15px;
-border-radius:14px;
-background:var(--d);
-color:#fff;
-display:flex;
-justify-content:space-between
+  margin-top:11px;
+  padding:15px;
+  border-radius:14px;
+  background:var(--d);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
 }
 
 .rem strong{
-color:#F6DC93;
-font-size:19px
+  color:#F6DC93;
+  font-size:19px;
 }
 
 .status{
-margin-top:11px;
-padding:10px;
-text-align:center;
-border-radius:10px;
-font-weight:700;
-font-size:13px;
-background:#F0F2EE
+  margin-top:11px;
+  padding:10px;
+  text-align:center;
+  border-radius:10px;
+  font-weight:700;
+  font-size:13px;
+  background:#F0F2EE;
 }
 
 .dp{
-background:#FFF5D8;
-color:#92712C
+  background:#FFF5D8;
+  color:#92712C;
 }
 
 .lunas{
-background:#E5F3E5;
-color:#3F7140
+  background:#E5F3E5;
+  color:#3F7140;
 }
 
 .err{
-background:#FBE4E2;
-color:#B94A48
+  background:#FBE4E2;
+  color:#B94A48;
 }
 
 button{
-width:100%;
-padding:15px;
-border:0;
-border-radius:14px;
-background:linear-gradient(135deg,var(--g),var(--d));
-color:#fff;
-font-size:16px;
-font-weight:800;
-cursor:pointer
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:14px;
+  background:
+  linear-gradient(
+    135deg,
+    var(--g),
+    var(--d)
+  );
+  color:#fff;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
 }
 
 button:disabled{
-opacity:.6
+  opacity:.6;
+  cursor:not-allowed;
 }
 
 .result{
-display:none;
-margin-top:13px;
-padding:13px;
-border-radius:12px;
-background:#E9F5E9;
-color:#3F7140;
-text-align:center;
-font-weight:700
+  display:none;
+  margin-top:13px;
+  padding:13px;
+  border-radius:12px;
+  background:#E9F5E9;
+  color:#3F7140;
+  text-align:center;
+  font-weight:700;
 }
 
 .note{
-text-align:center;
-color:var(--m);
-font-size:12px;
-line-height:1.55;
-margin-top:12px
+  text-align:center;
+  color:var(--m);
+  font-size:12px;
+  line-height:1.55;
+  margin-top:12px;
 }
 
 @media(max-width:600px){
 
-.form{
-padding:13px
+  .form{
+    padding:13px;
+  }
+
+  .sec{
+    padding:15px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .logo{
+    font-size:25px;
+  }
+
 }
 
-.sec{
-padding:15px
-}
-
-.grid{
-grid-template-columns:1fr
-}
-
-.full{
-grid-column:auto
-}
-
-.logo{
-font-size:25px
-}
-
-}
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="wrap">
 
 <div class="card">
+
 
 <div class="head">
 
@@ -267,105 +312,161 @@ Form Order • Bouquet Custom • Cisarua Puncak
 </div>
 
 
-<form class="form" id="form">
+<form
+  class="form"
+  id="form"
+>
 
 
 <!-- DATA PEMESAN -->
 
 <div class="sec">
 
-<h3>👤 Data Pemesan</h3>
+<h3>
+👤 Data Pemesan
+</h3>
 
 <div class="grid">
 
-<div>
-
-<label>Nama Pemesan *</label>
-
-<input
-id="nama"
-required
-placeholder="Nama pemesan">
-
-</div>
-
 
 <div>
 
-<label>No. WhatsApp *</label>
+<label>
+Nama Pemesan *
+</label>
 
 <input
-id="wa"
-type="tel"
-required
-placeholder="08xxxxxxxxxx">
+  id="nama"
+  required
+  placeholder="Nama pemesan"
+>
+
+</div>
+
+
+<div>
+
+<label>
+No. WhatsApp *
+</label>
+
+<input
+  id="wa"
+  type="tel"
+  required
+  placeholder="08xxxxxxxxxx"
+>
+
+</div>
+
 
 </div>
 
 </div>
 
-</div>
 
 
 <!-- DETAIL PESANAN -->
 
 <div class="sec">
 
-<h3>💐 Detail Pesanan</h3>
+<h3>
+💐 Detail Pesanan
+</h3>
+
 
 <div class="grid">
 
 
 <div>
 
-<label>Jenis Pesanan *</label>
+<label>
+Jenis Pesanan *
+</label>
 
-<select id="jenis" required>
+<select
+  id="jenis"
+  required
+>
 
 <option value="">
 Pilih jenis pesanan
 </option>
 
-<option>Buket Bunga</option>
-<option>Buket Uang</option>
-<option>Buket Snack</option>
-<option>Buket Boneka</option>
-<option>Buket Custom</option>
-<option>Mahar Nikah</option>
-<option>Make Up Graduation</option>
-<option>Make Up Event</option>
+<option>
+Buket Bunga
+</option>
+
+<option>
+Buket Uang
+</option>
+
+<option>
+Buket Snack
+</option>
+
+<option>
+Buket Boneka
+</option>
+
+<option>
+Buket Custom
+</option>
+
+<option>
+Mahar Nikah
+</option>
+
+<option>
+Make Up Graduation
+</option>
+
+<option>
+Make Up Event
+</option>
 
 </select>
 
 </div>
 
 
+
 <div>
 
-<label>Tanggal Dibutuhkan *</label>
+<label>
+Tanggal Dibutuhkan *
+</label>
 
 <input
-id="tanggal"
-type="date"
-required>
+  id="tanggal"
+  type="date"
+  required
+>
 
 </div>
 
 
+
 <div>
 
-<label>Jam</label>
+<label>
+Jam
+</label>
 
 <input
-id="jam"
-type="time">
+  id="jam"
+  type="time"
+>
 
 </div>
 
 
+
 <div>
 
-<label>Pengambilan / Pengiriman</label>
+<label>
+Pengambilan / Pengiriman
+</label>
 
 <select id="ambil">
 
@@ -382,46 +483,62 @@ Diantar
 </div>
 
 
+
 <div>
 
-<label>Warna / Tema</label>
+<label>
+Warna / Tema
+</label>
 
 <input
-id="tema"
-placeholder="Contoh: sage green & cream">
+  id="tema"
+  placeholder="Contoh: sage green & cream"
+>
 
 </div>
 
 
+
 <div>
 
-<label>Budget</label>
+<label>
+Budget
+</label>
 
 <input
-id="budget"
-placeholder="Contoh: Rp100.000">
+  id="budget"
+  placeholder="Contoh: Rp100.000"
+>
 
 </div>
+
 
 
 <div class="full">
 
-<label>Tulisan / Ucapan</label>
+<label>
+Tulisan / Ucapan
+</label>
 
 <textarea
-id="ucapan"
-placeholder="Tuliskan ucapan..."></textarea>
+  id="ucapan"
+  placeholder="Tuliskan ucapan..."
+></textarea>
 
 </div>
+
 
 
 <div class="full">
 
-<label>Catatan / Request</label>
+<label>
+Catatan / Request
+</label>
 
 <textarea
-id="catatan"
-placeholder="Detail tambahan pesanan..."></textarea>
+  id="catatan"
+  placeholder="Detail tambahan pesanan..."
+></textarea>
 
 </div>
 
@@ -429,51 +546,62 @@ placeholder="Detail tambahan pesanan..."></textarea>
 </div>
 
 </div>
+
 
 
 <!-- PEMBAYARAN -->
 
 <div class="sec pay">
 
-<h3>💳 Pembayaran</h3>
+<h3>
+💳 Pembayaran
+</h3>
+
 
 <div class="grid">
 
 
 <div>
 
-<label>Total Harga *</label>
+<label>
+Total Harga *
+</label>
 
 <div class="money">
 
 <span>Rp</span>
 
 <input
-id="total"
-type="number"
-min="0"
-required
-placeholder="0">
+  id="total"
+  type="number"
+  min="0"
+  required
+  placeholder="0"
+>
 
 </div>
 
 </div>
+
 
 
 <div>
 
-<label>DP *</label>
+<label>
+DP *
+</label>
 
 <div class="money">
 
 <span>Rp</span>
 
 <input
-id="dp"
-type="number"
-min="0"
-required
-placeholder="0">
+  id="dp"
+  type="number"
+  min="0"
+  required
+  placeholder="0"
+>
 
 </div>
 
@@ -481,11 +609,14 @@ placeholder="0">
 
 
 </div>
+
 
 
 <div class="row">
 
-<span>Total Pesanan</span>
+<span>
+Total Pesanan
+</span>
 
 <strong id="tt">
 Rp0
@@ -494,9 +625,12 @@ Rp0
 </div>
 
 
+
 <div class="row">
 
-<span>DP</span>
+<span>
+DP
+</span>
 
 <strong id="dt">
 Rp0
@@ -505,9 +639,12 @@ Rp0
 </div>
 
 
+
 <div class="rem">
 
-<span>Sisa Pelunasan</span>
+<span>
+Sisa Pelunasan
+</span>
 
 <strong id="st">
 Rp0
@@ -516,35 +653,43 @@ Rp0
 </div>
 
 
+
 <div
-id="ps"
-class="status">
-
+  id="ps"
+  class="status"
+>
 Belum ada pembayaran
+</div>
+
 
 </div>
 
-</div>
 
+
+<!-- TOMBOL -->
 
 <button
-id="btn"
-type="submit">
+  id="btn"
+  type="submit"
+>
 
 📲 Simpan & Kirim Pesanan
 
 </button>
 
 
+
 <div
-id="result"
-class="result">
-</div>
+  id="result"
+  class="result"
+></div>
+
 
 
 <div class="note">
 
-Pesanan dicatat ke Google Sheets dan rincian order dibuka di WhatsApp Hafa Florist.
+Pesanan dicatat ke Google Sheets
+dan rincian order dibuka di WhatsApp Hafa Florist.
 
 <br>
 
@@ -555,352 +700,321 @@ Pesanan diproses setelah DP diterima.
 
 </form>
 
+
 </div>
 
 </div>
+
 
 
 <script>
 
-/* ============================
-   KONFIGURASI
-============================ */
+
+/****************************************************
+ * URL GOOGLE APPS SCRIPT
+ ****************************************************/
 
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbxtG4SYgxSyx7JKhnJAJmXQ5YbIHaUU3iwEkJpETgT0HYmZveoJjoQTWBSCLhp5bAE/exec";
+
 
 const WA_HAFA =
 "628985643104";
 
 
-/* ============================
-   HELPER
-============================ */
+/****************************************************
+ * HELPER
+ ****************************************************/
 
 const $ =
-id => document.getElementById(id);
+id =>
+document.getElementById(id);
 
 
 const rp =
-n => new Intl.NumberFormat(
-"id-ID",
-{
-style:"currency",
-currency:"IDR",
-maximumFractionDigits:0
-}
-).format(Number(n)||0);
+n =>
+new Intl.NumberFormat(
+  "id-ID",
+  {
+    style:"currency",
+    currency:"IDR",
+    maximumFractionDigits:0
+  }
+).format(
+  Number(n) || 0
+);
 
 
-/* ============================
-   PEMBAYARAN
-============================ */
+/****************************************************
+ * HITUNG PEMBAYARAN
+ ****************************************************/
 
 function pay(){
 
-let total =
-+$("total").value || 0;
-
-let dp =
-+$("dp").value || 0;
-
-let sisa =
-Math.max(total-dp,0);
+  const total =
+    Number(
+      $("total").value
+    ) || 0;
 
 
-$("tt").textContent =
-rp(total);
-
-$("dt").textContent =
-rp(dp);
-
-$("st").textContent =
-rp(sisa);
+  const dp =
+    Number(
+      $("dp").value
+    ) || 0;
 
 
-let status =
-$("ps");
+  const sisa =
+    Math.max(
+      total - dp,
+      0
+    );
 
-status.className =
-"status";
+
+  $("tt").textContent =
+    rp(total);
 
 
-if(dp>total && total>0){
+  $("dt").textContent =
+    rp(dp);
 
-status.textContent =
-"⚠️ DP lebih besar dari total harga";
 
-status.classList.add("err");
+  $("st").textContent =
+    rp(sisa);
+
+
+  const status =
+    $("ps");
+
+
+  status.className =
+    "status";
+
+
+  if(
+    dp > total &&
+    total > 0
+  ){
+
+    status.textContent =
+      "⚠️ DP lebih besar dari total harga";
+
+    status.classList.add(
+      "err"
+    );
+
+  }
+
+  else if(
+    total > 0 &&
+    dp === total
+  ){
+
+    status.textContent =
+      "✓ LUNAS";
+
+    status.classList.add(
+      "lunas"
+    );
+
+  }
+
+  else if(
+    dp > 0
+  ){
+
+    status.textContent =
+      "✓ DP SUDAH DIBAYAR";
+
+    status.classList.add(
+      "dp"
+    );
+
+  }
+
+  else{
+
+    status.textContent =
+      "Belum ada pembayaran";
+
+  }
 
 }
 
-else if(total>0 && dp===total){
 
-status.textContent =
-"✓ LUNAS";
-
-status.classList.add("lunas");
-
-}
-
-else if(dp>0){
-
-status.textContent =
-"✓ DP SUDAH DIBAYAR";
-
-status.classList.add("dp");
-
-}
-
-else{
-
-status.textContent =
-"Belum ada pembayaran";
-
-}
-
-}
+$("total").addEventListener(
+  "input",
+  pay
+);
 
 
-$("total").oninput =
-pay;
+$("dp").addEventListener(
+  "input",
+  pay
+);
 
-$("dp").oninput =
-pay;
 
 pay();
 
 
-/* ============================
-   KIRIM ORDER
-============================ */
 
-$("form").onsubmit =
-function(e){
+/****************************************************
+ * SUBMIT FORM
+ ****************************************************/
 
-e.preventDefault();
+$("form").addEventListener(
+  "submit",
+  async function(e){
 
+    e.preventDefault();
 
-let total =
-+$("total").value || 0;
 
-let dp =
-+$("dp").value || 0;
+    const total =
+      Number(
+        $("total").value
+      ) || 0;
 
 
-if(total<=0){
+    const dp =
+      Number(
+        $("dp").value
+      ) || 0;
 
-alert(
-"Total harga harus diisi."
-);
 
-return;
+    if(total <= 0){
 
-}
+      alert(
+        "Total harga harus diisi."
+      );
 
+      return;
 
-if(dp>total){
+    }
 
-alert(
-"DP tidak boleh lebih besar dari total harga."
-);
 
-return;
+    if(dp > total){
 
-}
+      alert(
+        "DP tidak boleh lebih besar dari total harga."
+      );
 
+      return;
 
-/* DATA ORDER */
+    }
 
-const data = {
 
-nama:
-$("nama").value.trim(),
+    /**********************************************
+     * DATA ORDER
+     **********************************************/
 
-wa:
-$("wa").value.trim(),
+    const data = {
 
-jenis:
-$("jenis").value,
+      nama:
+        $("nama").value.trim(),
 
-budget:
-$("budget").value.trim(),
+      wa:
+        $("wa").value.trim(),
 
-tema:
-$("tema").value.trim(),
+      jenis:
+        $("jenis").value,
 
-ucapan:
-$("ucapan").value.trim(),
+      budget:
+        $("budget").value.trim(),
 
-tanggal:
-$("tanggal").value,
+      tema:
+        $("tema").value.trim(),
 
-jam:
-$("jam").value,
+      ucapan:
+        $("ucapan").value.trim(),
 
-ambil:
-$("ambil").value,
+      tanggal:
+        $("tanggal").value,
 
-catatan:
-$("catatan").value.trim(),
+      jam:
+        $("jam").value,
 
-total_harga:
-total,
+      ambil:
+        $("ambil").value,
 
-dp:
-dp
+      catatan:
+        $("catatan").value.trim(),
 
-};
+      total_harga:
+        total,
 
+      dp:
+        dp
 
-/* TOMBOL */
+    };
 
-$("btn").disabled =
-true;
 
-$("btn").textContent =
-"⏳ Menyimpan pesanan...";
+    /**********************************************
+     * TOMBOL
+     **********************************************/
 
+    $("btn").disabled =
+      true;
 
-/* IFRAME */
+    $("btn").textContent =
+      "⏳ Menyimpan pesanan...";
 
-let iframe =
-document.getElementById(
-"submitFrame"
-);
 
+    try{
 
-if(!iframe){
 
-iframe =
-document.createElement(
-"iframe"
-);
+      /********************************************
+       * KIRIM DATA KE APPS SCRIPT
+       ********************************************/
 
-iframe.name =
-"submitFrame";
+      const formData =
+        new URLSearchParams();
 
-iframe.id =
-"submitFrame";
 
-iframe.style.display =
-"none";
+      formData.append(
+        "payload",
+        JSON.stringify(data)
+      );
 
-document.body.appendChild(
-iframe
-);
 
-}
+      const response =
+        await fetch(
+          SCRIPT_URL,
+          {
+            method:"POST",
+            body:formData
+          }
+        );
 
 
-/* FORM TERSEMBUNYI */
+      const result =
+        await response.json();
 
-const sendForm =
-document.createElement(
-"form"
-);
 
+      /********************************************
+       * CEK HASIL
+       ********************************************/
 
-sendForm.method =
-"POST";
+      if(
+        !result.success
+      ){
 
-sendForm.action =
-SCRIPT_URL;
+        throw new Error(
+          result.message ||
+          "Gagal menyimpan order."
+        );
 
-sendForm.target =
-"submitFrame";
+      }
 
-sendForm.style.display =
-"none";
 
+      /********************************************
+       * PESAN WHATSAPP
+       ********************************************/
 
-/* MASUKKAN DATA */
-
-Object.keys(data).forEach(
-function(key){
-
-const input =
-document.createElement(
-"input"
-);
-
-input.type =
-"hidden";
-
-input.name =
-key;
-
-input.value =
-data[key];
-
-sendForm.appendChild(
-input
-);
-
-});
-
-
-document.body.appendChild(
-sendForm
-);
-
-
-/* KIRIM */
-
-sendForm.submit();
-
-
-/*
-   TUNGGU APPS SCRIPT
-*/
-
-setTimeout(
-function(){
-
-let sisa =
-total-dp;
-
-
-let status =
-"BELUM DP";
-
-
-if(dp===total){
-
-status =
-"LUNAS";
-
-}
-
-else if(dp>0){
-
-status =
-"DP SUDAH DIBAYAR";
-
-}
-
-
-/*
-   ID WHATSAPP
-*/
-
-const nomorOrder =
-"HF-" +
-Date.now()
-.toString()
-.slice(-6);
-
-
-/*
-   PESAN WHATSAPP
-*/
-
-const msg =
+      const message =
 
 `🌷 *FORM ORDER HAFA FLORIST*
 
 *NO. ORDER*
-${nomorOrder}
+${result.nomor_order}
 
 *DATA PEMESAN*
 Nama: ${data.nama}
@@ -921,61 +1035,91 @@ ${data.ucapan || "-"}
 ${data.catatan || "-"}
 
 *PEMBAYARAN*
-Total Harga: ${rp(total)}
-DP: ${rp(dp)}
-Sisa Pelunasan: ${rp(sisa)}
-Status: ${status}
+Total Harga: ${rp(result.total_harga)}
+DP: ${rp(result.dp)}
+Sisa Pelunasan: ${rp(result.sisa_pelunasan)}
+Status: ${result.status_pembayaran}
 
 Mohon konfirmasi pesanan saya.
+
 Terima kasih 🤍`;
 
 
-/* HASIL */
+      /********************************************
+       * TAMPILKAN HASIL
+       ********************************************/
 
-$("result").style.display =
-"block";
-
-$("result").textContent =
-"✅ Pesanan berhasil dikirim ke Hafa Florist.";
+      $("result").style.display =
+        "block";
 
 
-/* WHATSAPP */
+      $("result").textContent =
+        "✅ Order " +
+        result.nomor_order +
+        " berhasil disimpan.";
 
-window.open(
-"https://wa.me/" +
-WA_HAFA +
-"?text=" +
-encodeURIComponent(msg),
-"_blank"
+
+      /********************************************
+       * BUKA WHATSAPP
+       ********************************************/
+
+      const waURL =
+        "https://wa.me/" +
+        WA_HAFA +
+        "?text=" +
+        encodeURIComponent(
+          message
+        );
+
+
+      window.open(
+        waURL,
+        "_blank"
+      );
+
+
+      /********************************************
+       * RESET
+       ********************************************/
+
+      $("form").reset();
+
+      pay();
+
+
+    }
+
+    catch(error){
+
+      console.error(
+        error
+      );
+
+
+      alert(
+        "Gagal menyimpan pesanan.\n\n" +
+        error.message
+      );
+
+    }
+
+
+    finally{
+
+      $("btn").disabled =
+        false;
+
+      $("btn").textContent =
+        "📲 Simpan & Kirim Pesanan";
+
+    }
+
+  }
+
 );
-
-
-/* BERSIHKAN */
-
-sendForm.remove();
-
-
-/* RESET */
-
-$("form").reset();
-
-pay();
-
-
-$("btn").disabled =
-false;
-
-$("btn").textContent =
-"📲 Simpan & Kirim Pesanan";
-
-
-},
-2500
-);
-
-};
 
 </script>
 
 </body>
+
 </html>
