@@ -1,33 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-
 <head>
-
-<meta charset="utf-8">
-
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
->
-
-<meta
-  name="theme-color"
-  content="#58734A"
->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#58734A">
 
 <title>Hafa Florist - Form Order</title>
 
-
 <style>
-
 :root{
-  --g:#58734A;
-  --d:#40583A;
-  --s:#EEF4E9;
+  --green:#58734A;
+  --dark:#40583A;
+  --light:#EEF4E9;
   --gold:#C8A85B;
-  --t:#263126;
-  --m:#718071;
-  --b:#DCE5D7;
+  --text:#263126;
+  --muted:#718071;
+  --border:#DCE5D7;
 }
 
 *{
@@ -36,44 +24,34 @@
 
 body{
   margin:0;
-  padding:15px 9px 45px;
-  font-family:Arial,sans-serif;
-  color:var(--t);
-  background:
-  linear-gradient(
-    135deg,
-    #F8F8F1,
-    #EDF3E8
-  );
+  padding:15px 10px 50px;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:linear-gradient(135deg,#F8F8F1,#EAF1E6);
 }
 
-.wrap{
+.container{
+  width:100%;
   max-width:760px;
   margin:auto;
 }
 
 .card{
   background:#fff;
-  border-radius:27px;
+  border-radius:26px;
   overflow:hidden;
-  box-shadow:
-  0 18px 55px #35483022;
+  box-shadow:0 15px 50px rgba(53,72,48,.15);
 }
 
-.head{
-  padding:29px 18px;
+.header{
+  padding:30px 20px;
   text-align:center;
   color:#fff;
-  background:
-  linear-gradient(
-    135deg,
-    var(--d),
-    var(--g)
-  );
+  background:linear-gradient(135deg,var(--dark),var(--green));
 }
 
 .logo{
-  font-size:29px;
+  font-size:30px;
   font-weight:800;
 }
 
@@ -81,34 +59,30 @@ body{
   color:#F5D98A;
 }
 
-.sub{
-  font-size:13px;
+.subtitle{
   margin-top:7px;
+  font-size:13px;
+  opacity:.95;
 }
 
 .form{
-  padding:23px;
+  padding:22px;
 }
 
-.sec{
-  padding:18px;
+.section{
   margin-bottom:18px;
-  border:1px solid var(--b);
-  border-radius:19px;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:18px;
 }
 
-.sec.pay{
-  background:
-  linear-gradient(
-    135deg,
-    #F4F8EF,
-    #FFFDF7
-  );
+.payment{
+  background:linear-gradient(135deg,#F4F8EF,#FFFDF7);
 }
 
-h3{
-  margin:0 0 16px;
-  color:var(--d);
+.title{
+  margin:0 0 15px;
+  color:var(--dark);
   font-size:16px;
 }
 
@@ -126,7 +100,7 @@ label{
   display:block;
   margin-bottom:6px;
   font-size:13px;
-  font-weight:700;
+  font-weight:bold;
   color:#4d5c4c;
 }
 
@@ -139,19 +113,18 @@ textarea{
   border-radius:11px;
   background:#FCFDFB;
   font-size:14px;
-  outline:0;
+  outline:none;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
-  border-color:var(--g);
-  box-shadow:
-  0 0 0 3px #58734a1a;
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(88,115,74,.10);
 }
 
 textarea{
-  min-height:82px;
+  min-height:85px;
   resize:vertical;
 }
 
@@ -164,78 +137,78 @@ textarea{
   left:12px;
   top:50%;
   transform:translateY(-50%);
-  font-weight:700;
-  color:var(--m);
+  color:var(--muted);
   font-size:13px;
+  font-weight:bold;
 }
 
 .money input{
   padding-left:39px;
 }
 
-.row{
+.summary-row{
   display:flex;
   justify-content:space-between;
-  padding:10px 0;
+  padding:11px 0;
   border-bottom:1px dashed #D9E2D4;
   font-size:14px;
 }
 
-.rem{
-  margin-top:11px;
-  padding:15px;
-  border-radius:14px;
-  background:var(--d);
-  color:#fff;
+.remaining{
   display:flex;
   justify-content:space-between;
+  align-items:center;
+  margin-top:12px;
+  padding:16px;
+  border-radius:14px;
+  color:#fff;
+  background:var(--dark);
 }
 
-.rem strong{
+.remaining strong{
   color:#F6DC93;
   font-size:19px;
 }
 
 .status{
-  margin-top:11px;
-  padding:10px;
+  margin-top:12px;
+  padding:11px;
   text-align:center;
   border-radius:10px;
-  font-weight:700;
-  font-size:13px;
   background:#F0F2EE;
+  font-size:13px;
+  font-weight:bold;
 }
 
-.dp{
+.status.dp{
   background:#FFF5D8;
   color:#92712C;
 }
 
-.lunas{
+.status.lunas{
   background:#E5F3E5;
   color:#3F7140;
 }
 
-.err{
+.status.error{
   background:#FBE4E2;
   color:#B94A48;
 }
 
 button{
   width:100%;
-  padding:15px;
+  padding:16px;
   border:0;
   border-radius:14px;
-  background:
-  linear-gradient(
-    135deg,
-    var(--g),
-    var(--d)
-  );
   color:#fff;
+  background:linear-gradient(135deg,var(--green),var(--dark));
   font-size:16px;
   font-weight:800;
   cursor:pointer;
+}
+
+button:hover{
+  opacity:.95;
 }
 
 button:disabled{
@@ -243,23 +216,28 @@ button:disabled{
   cursor:not-allowed;
 }
 
-.result{
-  display:none;
-  margin-top:13px;
+.info{
+  margin-top:12px;
   padding:13px;
-  border-radius:12px;
+  border-radius:11px;
   background:#E9F5E9;
   color:#3F7140;
   text-align:center;
-  font-weight:700;
+  font-size:13px;
+  font-weight:bold;
+  display:none;
 }
 
 .note{
+  margin-top:13px;
   text-align:center;
-  color:var(--m);
+  color:var(--muted);
   font-size:12px;
-  line-height:1.55;
-  margin-top:12px;
+  line-height:1.6;
+}
+
+iframe{
+  display:none;
 }
 
 @media(max-width:600px){
@@ -268,7 +246,7 @@ button:disabled{
     padding:13px;
   }
 
-  .sec{
+  .section{
     padding:15px;
   }
 
@@ -283,29 +261,23 @@ button:disabled{
   .logo{
     font-size:25px;
   }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<div class="wrap">
+<div class="container">
 
 <div class="card">
 
-
-<div class="head">
+<div class="header">
 
 <div class="logo">
 🌷 Hafa <span>Florist</span>
 </div>
 
-<div class="sub">
+<div class="subtitle">
 Form Order • Bouquet Custom • Cisarua Puncak
 </div>
 
@@ -313,29 +285,31 @@ Form Order • Bouquet Custom • Cisarua Puncak
 
 
 <form
+  id="orderForm"
   class="form"
-  id="form"
+  method="POST"
+  target="submitFrame"
+  action="https://script.google.com/macros/s/AKfycbxtG4SYgxSyx7JKhnJAJmXQ5YbIHaUU3iwEkJpETgT0HYmZveoJjoQTWBSCLhp5bAE/exec"
 >
 
 
 <!-- DATA PEMESAN -->
 
-<div class="sec">
+<div class="section">
 
-<h3>
+<h3 class="title">
 👤 Data Pemesan
 </h3>
 
 <div class="grid">
 
-
 <div>
 
-<label>
-Nama Pemesan *
-</label>
+<label>Nama Pemesan *</label>
 
 <input
+  type="text"
+  name="nama"
   id="nama"
   required
   placeholder="Nama pemesan"
@@ -346,45 +320,39 @@ Nama Pemesan *
 
 <div>
 
-<label>
-No. WhatsApp *
-</label>
+<label>No. WhatsApp *</label>
 
 <input
-  id="wa"
   type="tel"
+  name="wa"
+  id="wa"
   required
   placeholder="08xxxxxxxxxx"
 >
 
 </div>
 
-
 </div>
 
 </div>
-
 
 
 <!-- DETAIL PESANAN -->
 
-<div class="sec">
+<div class="section">
 
-<h3>
+<h3 class="title">
 💐 Detail Pesanan
 </h3>
 
-
 <div class="grid">
-
 
 <div>
 
-<label>
-Jenis Pesanan *
-</label>
+<label>Jenis Pesanan *</label>
 
 <select
+  name="jenis"
   id="jenis"
   required
 >
@@ -393,104 +361,71 @@ Jenis Pesanan *
 Pilih jenis pesanan
 </option>
 
-<option>
-Buket Bunga
-</option>
-
-<option>
-Buket Uang
-</option>
-
-<option>
-Buket Snack
-</option>
-
-<option>
-Buket Boneka
-</option>
-
-<option>
-Buket Custom
-</option>
-
-<option>
-Mahar Nikah
-</option>
-
-<option>
-Make Up Graduation
-</option>
-
-<option>
-Make Up Event
-</option>
+<option>Buket Bunga</option>
+<option>Buket Uang</option>
+<option>Buket Snack</option>
+<option>Buket Boneka</option>
+<option>Buket Custom</option>
+<option>Mahar Nikah</option>
+<option>Make Up Graduation</option>
+<option>Make Up Event</option>
 
 </select>
 
 </div>
 
 
-
 <div>
 
-<label>
-Tanggal Dibutuhkan *
-</label>
+<label>Tanggal Dibutuhkan *</label>
 
 <input
-  id="tanggal"
   type="date"
+  name="tanggal"
+  id="tanggal"
   required
 >
 
 </div>
 
 
-
 <div>
 
-<label>
-Jam
-</label>
+<label>Jam</label>
 
 <input
-  id="jam"
   type="time"
+  name="jam"
+  id="jam"
 >
 
 </div>
 
 
-
 <div>
 
-<label>
-Pengambilan / Pengiriman
-</label>
+<label>Pengambilan / Pengiriman</label>
 
-<select id="ambil">
+<select
+  name="ambil"
+  id="ambil"
+>
 
-<option>
-Ambil di tempat
-</option>
-
-<option>
-Diantar
-</option>
+<option>Ambil di tempat</option>
+<option>Diantar</option>
 
 </select>
 
 </div>
 
 
-
 <div>
 
-<label>
-Warna / Tema
-</label>
+<label>Warna / Tema</label>
 
 <input
+  type="text"
+  name="tema"
   id="tema"
   placeholder="Contoh: sage green & cream"
 >
@@ -498,14 +433,13 @@ Warna / Tema
 </div>
 
 
-
 <div>
 
-<label>
-Budget
-</label>
+<label>Budget</label>
 
 <input
+  type="text"
+  name="budget"
   id="budget"
   placeholder="Contoh: Rp100.000"
 >
@@ -513,14 +447,12 @@ Budget
 </div>
 
 
-
 <div class="full">
 
-<label>
-Tulisan / Ucapan
-</label>
+<label>Tulisan / Ucapan</label>
 
 <textarea
+  name="ucapan"
   id="ucapan"
   placeholder="Tuliskan ucapan..."
 ></textarea>
@@ -528,53 +460,46 @@ Tulisan / Ucapan
 </div>
 
 
-
 <div class="full">
 
-<label>
-Catatan / Request
-</label>
+<label>Catatan / Request</label>
 
 <textarea
+  name="catatan"
   id="catatan"
   placeholder="Detail tambahan pesanan..."
 ></textarea>
 
 </div>
 
-
 </div>
 
 </div>
-
 
 
 <!-- PEMBAYARAN -->
 
-<div class="sec pay">
+<div class="section payment">
 
-<h3>
+<h3 class="title">
 💳 Pembayaran
 </h3>
 
-
 <div class="grid">
 
-
 <div>
 
-<label>
-Total Harga *
-</label>
+<label>Total Harga *</label>
 
 <div class="money">
 
 <span>Rp</span>
 
 <input
+  type="number"
+  name="total_harga"
   id="total"
-  type="number"
-  min="0"
+  min="1"
   required
   placeholder="0"
 >
@@ -584,20 +509,18 @@ Total Harga *
 </div>
 
 
-
 <div>
 
-<label>
-DP *
-</label>
+<label>DP *</label>
 
 <div class="money">
 
 <span>Rp</span>
 
 <input
-  id="dp"
   type="number"
+  name="dp"
+  id="dp"
   min="0"
   required
   placeholder="0"
@@ -607,89 +530,81 @@ DP *
 
 </div>
 
-
 </div>
 
 
+<div class="summary-row">
 
-<div class="row">
+<span>Total Pesanan</span>
 
-<span>
-Total Pesanan
-</span>
-
-<strong id="tt">
+<strong id="totalText">
 Rp0
 </strong>
 
 </div>
 
 
+<div class="summary-row">
 
-<div class="row">
+<span>DP</span>
 
-<span>
-DP
-</span>
-
-<strong id="dt">
+<strong id="dpText">
 Rp0
 </strong>
 
 </div>
 
 
-
-<div class="rem">
+<div class="remaining">
 
 <span>
 Sisa Pelunasan
 </span>
 
-<strong id="st">
+<strong id="remainingText">
 Rp0
 </strong>
 
 </div>
 
 
-
 <div
-  id="ps"
+  id="status"
   class="status"
 >
 Belum ada pembayaran
 </div>
 
-
 </div>
 
 
+<!-- HIDDEN PAYLOAD -->
 
-<!-- TOMBOL -->
-
-<button
-  id="btn"
-  type="submit"
+<input
+  type="hidden"
+  name="payload"
+  id="payload"
 >
 
-📲 Simpan & Kirim Pesanan
 
+<button
+  type="submit"
+  id="submitButton"
+>
+📲 Simpan & Kirim Pesanan
 </button>
 
 
-
 <div
-  id="result"
-  class="result"
+  id="success"
+  class="info"
 ></div>
-
 
 
 <div class="note">
 
-Pesanan dicatat ke Google Sheets
-dan rincian order dibuka di WhatsApp Hafa Florist.
+Pesanan akan dicatat ke Google Sheets
+dan rincian pesanan dikirim ke WhatsApp Hafa Florist.
 
 <br>
 
@@ -697,135 +612,149 @@ Pesanan diproses setelah DP diterima.
 
 </div>
 
-
 </form>
 
 
-</div>
+<iframe
+  name="submitFrame"
+  id="submitFrame"
+></iframe>
+
 
 </div>
 
+</div>
 
 
 <script>
-
-
-/****************************************************
- * URL GOOGLE APPS SCRIPT
- ****************************************************/
-
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxtG4SYgxSyx7JKhnJAJmXQ5YbIHaUU3iwEkJpETgT0HYmZveoJjoQTWBSCLhp5bAE/exec";
-
 
 const WA_HAFA =
 "628985643104";
 
 
-/****************************************************
- * HELPER
- ****************************************************/
-
-const $ =
-id =>
-document.getElementById(id);
+const form =
+document.getElementById("orderForm");
 
 
-const rp =
-n =>
-new Intl.NumberFormat(
-  "id-ID",
-  {
-    style:"currency",
-    currency:"IDR",
-    maximumFractionDigits:0
-  }
-).format(
-  Number(n) || 0
-);
+const total =
+document.getElementById("total");
 
 
-/****************************************************
- * HITUNG PEMBAYARAN
- ****************************************************/
-
-function pay(){
-
-  const total =
-    Number(
-      $("total").value
-    ) || 0;
+const dp =
+document.getElementById("dp");
 
 
-  const dp =
-    Number(
-      $("dp").value
-    ) || 0;
+const statusBox =
+document.getElementById("status");
 
 
-  const sisa =
+const totalText =
+document.getElementById("totalText");
+
+
+const dpText =
+document.getElementById("dpText");
+
+
+const remainingText =
+document.getElementById("remainingText");
+
+
+const button =
+document.getElementById("submitButton");
+
+
+const success =
+document.getElementById("success");
+
+
+const payload =
+document.getElementById("payload");
+
+
+function rupiah(number){
+
+  return new Intl.NumberFormat(
+    "id-ID",
+    {
+      style:"currency",
+      currency:"IDR",
+      maximumFractionDigits:0
+    }
+  ).format(
+    Number(number) || 0
+  );
+
+}
+
+
+function updatePayment(){
+
+  const t =
+    Number(total.value) || 0;
+
+  const d =
+    Number(dp.value) || 0;
+
+  const s =
     Math.max(
-      total - dp,
+      t - d,
       0
     );
 
 
-  $("tt").textContent =
-    rp(total);
+  totalText.textContent =
+    rupiah(t);
 
 
-  $("dt").textContent =
-    rp(dp);
+  dpText.textContent =
+    rupiah(d);
 
 
-  $("st").textContent =
-    rp(sisa);
+  remainingText.textContent =
+    rupiah(s);
 
 
-  const status =
-    $("ps");
-
-
-  status.className =
+  statusBox.className =
     "status";
 
 
   if(
-    dp > total &&
-    total > 0
+    d > t &&
+    t > 0
   ){
 
-    status.textContent =
+    statusBox.textContent =
       "⚠️ DP lebih besar dari total harga";
 
-    status.classList.add(
-      "err"
+    statusBox.classList.add(
+      "error"
     );
 
   }
 
   else if(
-    total > 0 &&
-    dp === total
+    t > 0 &&
+    d === t
   ){
 
-    status.textContent =
+    statusBox.textContent =
       "✓ LUNAS";
 
-    status.classList.add(
+    statusBox.classList.add(
       "lunas"
     );
 
   }
 
   else if(
-    dp > 0
+    d > 0
   ){
 
-    status.textContent =
+    statusBox.textContent =
       "✓ DP SUDAH DIBAYAR";
 
-    status.classList.add(
+    statusBox.classList.add(
       "dp"
     );
 
@@ -833,7 +762,7 @@ function pay(){
 
   else{
 
-    status.textContent =
+    statusBox.textContent =
       "Belum ada pembayaran";
 
   }
@@ -841,46 +770,32 @@ function pay(){
 }
 
 
-$("total").addEventListener(
+total.addEventListener(
   "input",
-  pay
+  updatePayment
 );
 
 
-$("dp").addEventListener(
+dp.addEventListener(
   "input",
-  pay
+  updatePayment
 );
 
 
-pay();
-
-
-
-/****************************************************
- * SUBMIT FORM
- ****************************************************/
-
-$("form").addEventListener(
+form.addEventListener(
   "submit",
-  async function(e){
+  function(event){
 
-    e.preventDefault();
+    const t =
+      Number(total.value) || 0;
 
-
-    const total =
-      Number(
-        $("total").value
-      ) || 0;
+    const d =
+      Number(dp.value) || 0;
 
 
-    const dp =
-      Number(
-        $("dp").value
-      ) || 0;
+    if(t <= 0){
 
-
-    if(total <= 0){
+      event.preventDefault();
 
       alert(
         "Total harga harus diisi."
@@ -891,7 +806,9 @@ $("form").addEventListener(
     }
 
 
-    if(dp > total){
+    if(d > t){
+
+      event.preventDefault();
 
       alert(
         "DP tidak boleh lebih besar dari total harga."
@@ -902,119 +819,104 @@ $("form").addEventListener(
     }
 
 
-    /**********************************************
-     * DATA ORDER
-     **********************************************/
+    /****************************************
+     * BUAT DATA ORDER
+     ****************************************/
 
     const data = {
 
       nama:
-        $("nama").value.trim(),
+        document.getElementById("nama").value.trim(),
 
       wa:
-        $("wa").value.trim(),
+        document.getElementById("wa").value.trim(),
 
       jenis:
-        $("jenis").value,
+        document.getElementById("jenis").value,
 
       budget:
-        $("budget").value.trim(),
+        document.getElementById("budget").value.trim(),
 
       tema:
-        $("tema").value.trim(),
+        document.getElementById("tema").value.trim(),
 
       ucapan:
-        $("ucapan").value.trim(),
+        document.getElementById("ucapan").value.trim(),
 
       tanggal:
-        $("tanggal").value,
+        document.getElementById("tanggal").value,
 
       jam:
-        $("jam").value,
+        document.getElementById("jam").value,
 
       ambil:
-        $("ambil").value,
+        document.getElementById("ambil").value,
 
       catatan:
-        $("catatan").value.trim(),
+        document.getElementById("catatan").value.trim(),
 
       total_harga:
-        total,
+        t,
 
       dp:
-        dp
+        d
 
     };
 
 
-    /**********************************************
-     * TOMBOL
-     **********************************************/
+    /****************************************
+     * MASUKKAN DATA KE PAYLOAD
+     ****************************************/
 
-    $("btn").disabled =
+    payload.value =
+      JSON.stringify(data);
+
+
+    /****************************************
+     * TAMPILKAN PROSES
+     ****************************************/
+
+    button.disabled =
       true;
 
-    $("btn").textContent =
+    button.textContent =
       "⏳ Menyimpan pesanan...";
 
 
-    try{
+    success.style.display =
+      "none";
 
 
-      /********************************************
-       * KIRIM DATA KE APPS SCRIPT
-       ********************************************/
+    /****************************************
+     * BUAT PESAN WA
+     ****************************************/
 
-      const formData =
-        new URLSearchParams();
-
-
-      formData.append(
-        "payload",
-        JSON.stringify(data)
-      );
+    const s =
+      Math.max(t - d,0);
 
 
-      const response =
-        await fetch(
-          SCRIPT_URL,
-          {
-            method:"POST",
-            body:formData
-          }
-        );
+    let status =
+      "BELUM DP";
 
 
-      const result =
-        await response.json();
+    if(d === t){
+
+      status =
+        "LUNAS";
+
+    }
+
+    else if(d > 0){
+
+      status =
+        "DP SUDAH DIBAYAR";
+
+    }
 
 
-      /********************************************
-       * CEK HASIL
-       ********************************************/
-
-      if(
-        !result.success
-      ){
-
-        throw new Error(
-          result.message ||
-          "Gagal menyimpan order."
-        );
-
-      }
-
-
-      /********************************************
-       * PESAN WHATSAPP
-       ********************************************/
-
-      const message =
+    const message =
 
 `🌷 *FORM ORDER HAFA FLORIST*
-
-*NO. ORDER*
-${result.nomor_order}
 
 *DATA PEMESAN*
 Nama: ${data.nama}
@@ -1035,91 +937,67 @@ ${data.ucapan || "-"}
 ${data.catatan || "-"}
 
 *PEMBAYARAN*
-Total Harga: ${rp(result.total_harga)}
-DP: ${rp(result.dp)}
-Sisa Pelunasan: ${rp(result.sisa_pelunasan)}
-Status: ${result.status_pembayaran}
+Total Harga: ${rupiah(t)}
+DP: ${rupiah(d)}
+Sisa Pelunasan: ${rupiah(s)}
+Status: ${status}
 
 Mohon konfirmasi pesanan saya.
 
 Terima kasih 🤍`;
 
 
-      /********************************************
-       * TAMPILKAN HASIL
-       ********************************************/
+    /****************************************
+     * SIMPAN KE WHATSAPP
+     ****************************************/
 
-      $("result").style.display =
-        "block";
+    setTimeout(
+      function(){
 
-
-      $("result").textContent =
-        "✅ Order " +
-        result.nomor_order +
-        " berhasil disimpan.";
-
-
-      /********************************************
-       * BUKA WHATSAPP
-       ********************************************/
-
-      const waURL =
-        "https://wa.me/" +
-        WA_HAFA +
-        "?text=" +
-        encodeURIComponent(
-          message
+        window.open(
+          "https://wa.me/" +
+          WA_HAFA +
+          "?text=" +
+          encodeURIComponent(message),
+          "_blank"
         );
 
-
-      window.open(
-        waURL,
-        "_blank"
-      );
+      },
+      800
+    );
 
 
-      /********************************************
-       * RESET
-       ********************************************/
+    /****************************************
+     * TUNGGU SEBENTAR
+     * KEMUDIAN TAMPILKAN BERHASIL
+     ****************************************/
 
-      $("form").reset();
+    setTimeout(
+      function(){
 
-      pay();
+        success.style.display =
+          "block";
 
+        success.textContent =
+          "✅ Pesanan sedang dikirim ke Hafa Florist.";
 
-    }
+        button.disabled =
+          false;
 
-    catch(error){
+        button.textContent =
+          "📲 Simpan & Kirim Pesanan";
 
-      console.error(
-        error
-      );
-
-
-      alert(
-        "Gagal menyimpan pesanan.\n\n" +
-        error.message
-      );
-
-    }
-
-
-    finally{
-
-      $("btn").disabled =
-        false;
-
-      $("btn").textContent =
-        "📲 Simpan & Kirim Pesanan";
-
-    }
+      },
+      1500
+    );
 
   }
-
 );
+
+
+updatePayment();
 
 </script>
 
 </body>
-
 </html>
