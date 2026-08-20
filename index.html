@@ -1,1414 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1.0"
->
-
-<meta
-name="theme-color"
-content="#58734A"
->
-
-<title>
-Hafa Florist - Form Order
-</title>
-
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#58734A">
+<title>Hafa Florist - Form Order</title>
 <style>
-
-:root{
-
---green:#58734A;
-
---dark:#40583A;
-
---light:#EEF4E9;
-
---gold:#C8A85B;
-
---text:#263126;
-
---muted:#718071;
-
---border:#DCE5D7;
-
-}
-
-*{
-
-box-sizing:border-box;
-
-}
-
-body{
-
-margin:0;
-
-padding:15px 10px 50px;
-
-font-family:
-Arial,
-sans-serif;
-
-color:var(--text);
-
-background:
-linear-gradient(
-135deg,
-#F8F8F1,
-#EDF3E8
-);
-
-}
-
-.wrap{
-
-max-width:760px;
-
-margin:auto;
-
-}
-
-.card{
-
-background:#fff;
-
-border-radius:27px;
-
-overflow:hidden;
-
-box-shadow:
-0 18px 55px #35483022;
-
-}
-
-.header{
-
-padding:30px 18px;
-
-text-align:center;
-
-color:#fff;
-
-background:
-linear-gradient(
-135deg,
-var(--dark),
-var(--green)
-);
-
-}
-
-.logo{
-
-font-size:30px;
-
-font-weight:800;
-
-}
-
-.logo span{
-
-color:#F5D98A;
-
-}
-
-.subtitle{
-
-font-size:13px;
-
-margin-top:8px;
-
-}
-
-.form{
-
-padding:23px;
-
-}
-
-.section{
-
-padding:18px;
-
-margin-bottom:18px;
-
-border:1px solid var(--border);
-
-border-radius:19px;
-
-}
-
-.payment{
-
-background:
-linear-gradient(
-135deg,
-#F4F8EF,
-#FFFDF7
-);
-
-}
-
-h3{
-
-margin:
-0 0 16px;
-
-color:var(--dark);
-
-font-size:16px;
-
-}
-
-.grid{
-
-display:grid;
-
-grid-template-columns:
-1fr 1fr;
-
-gap:13px;
-
-}
-
-.full{
-
-grid-column:
-1/-1;
-
-}
-
-label{
-
-display:block;
-
-margin-bottom:6px;
-
-font-size:13px;
-
-font-weight:700;
-
-color:#4d5c4c;
-
-}
-
-input,
-select,
-textarea{
-
-width:100%;
-
-padding:12px;
-
-border:
-1px solid #D9E1D4;
-
-border-radius:11px;
-
-background:#FCFDFB;
-
-font-size:14px;
-
-outline:none;
-
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-
-border-color:
-var(--green);
-
-box-shadow:
-0 0 0 3px
-#58734a1a;
-
-}
-
-textarea{
-
-min-height:82px;
-
-resize:vertical;
-
-}
-
-.money{
-
-position:relative;
-
-}
-
-.money span{
-
-position:absolute;
-
-left:12px;
-
-top:50%;
-
-transform:
-translateY(-50%);
-
-font-weight:700;
-
-color:var(--muted);
-
-font-size:13px;
-
-}
-
-.money input{
-
-padding-left:39px;
-
-}
-
-.summary-row{
-
-display:flex;
-
-justify-content:space-between;
-
-padding:10px 0;
-
-border-bottom:
-1px dashed #D9E2D4;
-
-font-size:14px;
-
-}
-
-.remaining{
-
-margin-top:11px;
-
-padding:15px;
-
-border-radius:14px;
-
-background:var(--dark);
-
-color:#fff;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-}
-
-.remaining strong{
-
-color:#F6DC93;
-
-font-size:19px;
-
-}
-
-.status{
-
-margin-top:11px;
-
-padding:11px;
-
-text-align:center;
-
-border-radius:10px;
-
-font-weight:700;
-
-font-size:13px;
-
-background:#F0F2EE;
-
-}
-
-.status.dp{
-
-background:#FFF5D8;
-
-color:#92712C;
-
-}
-
-.status.lunas{
-
-background:#E5F3E5;
-
-color:#3F7140;
-
-}
-
-.status.error{
-
-background:#FBE4E2;
-
-color:#B94A48;
-
-}
-
-button{
-
-width:100%;
-
-padding:15px;
-
-border:0;
-
-border-radius:14px;
-
-background:
-linear-gradient(
-135deg,
-var(--green),
-var(--dark)
-);
-
-color:#fff;
-
-font-size:16px;
-
-font-weight:800;
-
-cursor:pointer;
-
-}
-
-button:disabled{
-
-opacity:.6;
-
-cursor:
-not-allowed;
-
-}
-
-.note{
-
-text-align:center;
-
-color:var(--muted);
-
-font-size:12px;
-
-line-height:1.55;
-
-margin-top:12px;
-
-}
-
-.success{
-
-display:none;
-
-margin-top:15px;
-
-padding:16px;
-
-border-radius:14px;
-
-background:#E7F4E4;
-
-color:#35663A;
-
-text-align:center;
-
-font-weight:700;
-
-}
-
-.success .number{
-
-font-size:24px;
-
-margin-top:7px;
-
-color:var(--dark);
-
-}
-
-iframe{
-
-display:none;
-
-}
-
+:root{--g:#58734A;--d:#40583A;--text:#263126;--muted:#718071;--border:#DCE5D7}
+*{box-sizing:border-box}
+body{margin:0;padding:12px 10px 40px;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:linear-gradient(135deg,#F8F8F1,#EDF3E8);-webkit-text-size-adjust:100%}
+.wrap{width:100%;max-width:760px;margin:auto}
+.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 15px 45px rgba(53,72,48,.14)}
+.head{padding:28px 18px;text-align:center;color:#fff;background:linear-gradient(135deg,var(--d),var(--g))}
+.logo{font-size:28px;font-weight:800}.logo span{color:#F5D98A}.sub{font-size:13px;margin-top:7px}
+.form{padding:20px}.sec{padding:17px;margin-bottom:16px;border:1px solid var(--border);border-radius:18px}.sec.pay{background:linear-gradient(135deg,#F4F8EF,#FFFDF7)}
+h3{margin:0 0 14px;color:var(--d);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.full{grid-column:1/-1}
+label{display:block;margin-bottom:6px;font-size:13px;font-weight:700;color:#4d5c4c}
+input,select,textarea{width:100%;min-width:0;padding:13px 12px;border:1px solid #D9E1D4;border-radius:11px;background:#FCFDFB;color:var(--text);font-size:16px;outline:0;font-family:inherit}
+textarea{min-height:85px;resize:vertical}
+.money{position:relative}.money span{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--muted);font-size:13px}.money input{padding-left:38px}
+.row{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px dashed #D9E2D4;font-size:14px}
+.rem{margin-top:11px;padding:15px;border-radius:14px;background:var(--d);color:#fff;display:flex;justify-content:space-between}.rem strong{color:#F6DC93;font-size:19px}
+.status{margin-top:11px;padding:11px;text-align:center;border-radius:10px;font-weight:700;font-size:13px;background:#F0F2EE}.dp{background:#FFF5D8!important;color:#92712C}.lunas{background:#E5F3E5!important;color:#3F7140}.err{background:#FBE4E2!important;color:#B94A48}
+button{width:100%;padding:15px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--g),var(--d));color:#fff;font-size:16px;font-weight:800;cursor:pointer}
+button:disabled{opacity:.6}
+.result{display:none;margin-top:13px;padding:15px;border-radius:12px;background:#E9F5E9;color:#3F7140;text-align:center;font-weight:700;line-height:1.6}
+.wa-btn{display:none;margin-top:10px;padding:14px;border-radius:12px;background:#25D366;color:#fff;text-decoration:none;text-align:center;font-weight:800}
+.note{text-align:center;color:var(--muted);font-size:12px;line-height:1.55;margin-top:12px}
 @media(max-width:600px){
-
-.form{
-
-padding:13px;
-
+body{padding:0 0 25px}.card{border-radius:0;min-height:100vh}.head{padding:25px 15px}.logo{font-size:25px}
+.form{padding:12px}.sec{padding:14px;margin-bottom:13px;border-radius:15px}
+.grid{grid-template-columns:1fr;gap:11px}.full{grid-column:auto}
+input,select,textarea{font-size:16px;padding:13px}.row,.rem{font-size:13px}.rem strong{font-size:17px}
 }
-
-.section{
-
-padding:15px;
-
-}
-
-.grid{
-
-grid-template-columns:1fr;
-
-}
-
-.full{
-
-grid-column:auto;
-
-}
-
-.logo{
-
-font-size:25px;
-
-}
-
-}
-
 </style>
-
 </head>
-
-
 <body>
+<div class="wrap"><div class="card">
+<div class="head"><div class="logo">🌷 Hafa <span>Florist</span></div><div class="sub">Form Order • Bouquet Custom • Cisarua Puncak</div></div>
+<form class="form" id="form">
 
+<div class="sec"><h3>👤 Data Pemesan</h3><div class="grid">
+<div><label>Nama Pemesan *</label><input id="nama" required autocomplete="name" placeholder="Nama pemesan"></div>
+<div><label>No. WhatsApp *</label><input id="wa" type="tel" inputmode="tel" required autocomplete="tel" placeholder="08xxxxxxxxxx"></div>
+</div></div>
 
-<div class="wrap">
+<div class="sec"><h3>💐 Detail Pesanan</h3><div class="grid">
+<div><label>Jenis Pesanan *</label><select id="jenis" required><option value="">Pilih jenis pesanan</option><option>Buket Bunga</option><option>Buket Uang</option><option>Buket Snack</option><option>Buket Boneka</option><option>Buket Custom</option><option>Mahar Nikah</option><option>Make Up Graduation</option><option>Make Up Event</option></select></div>
+<div><label>Tanggal Dibutuhkan *</label><input id="tanggal" type="date" required></div>
+<div><label>Jam</label><input id="jam" type="time"></div>
+<div><label>Pengambilan / Pengiriman</label><select id="ambil"><option>Ambil di tempat</option><option>Diantar</option></select></div>
+<div><label>Warna / Tema</label><input id="tema" placeholder="Contoh: sage green & cream"></div>
+<div><label>Budget</label><input id="budget" inputmode="numeric" placeholder="Contoh: Rp100.000"></div>
+<div class="full"><label>Tulisan / Ucapan</label><textarea id="ucapan" placeholder="Tuliskan ucapan..."></textarea></div>
+<div class="full"><label>Catatan / Request</label><textarea id="catatan" placeholder="Detail tambahan pesanan..."></textarea></div>
+</div></div>
 
-<div class="card">
-
-
-<div class="header">
-
-<div class="logo">
-
-🌷 Hafa
-<span>Florist</span>
-
+<div class="sec pay"><h3>💳 Pembayaran</h3><div class="grid">
+<div><label>Total Harga *</label><div class="money"><span>Rp</span><input id="total" type="number" inputmode="numeric" min="0" required placeholder="0"></div></div>
+<div><label>DP *</label><div class="money"><span>Rp</span><input id="dp" type="number" inputmode="numeric" min="0" required placeholder="0"></div></div>
 </div>
-
-<div class="subtitle">
-
-Form Order • Bouquet Custom • Cisarua Puncak
-
-</div>
-
-</div>
-
-
-<form
-  id="orderForm"
-  method="GET"
-  action="https://script.google.com/macros/s/AKfycbxtG4SYgxSyx7JKhnJAJmXQ5YbIHaUU3iwEkJpETgT0HYmZveoJjoQTWBSCLhp5bAE/exec"
-  target="googleSheetFrame"
->
-
-
-<input
-type="hidden"
-name="action"
-value="order"
->
-
-
-<!-- DATA PEMESAN -->
-
-<div class="section">
-
-<h3>
-👤 Data Pemesan
-</h3>
-
-
-<div class="grid">
-
-
-<div>
-
-<label>
-Nama Pemesan *
-</label>
-
-<input
-type="text"
-name="nama"
-id="nama"
-required
-placeholder="Nama pemesan"
->
-
-</div>
-
-
-<div>
-
-<label>
-No. WhatsApp *
-</label>
-
-<input
-type="tel"
-name="wa"
-id="wa"
-required
-placeholder="08xxxxxxxxxx"
->
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- DETAIL PESANAN -->
-
-<div class="section">
-
-<h3>
-💐 Detail Pesanan
-</h3>
-
-
-<div class="grid">
-
-
-<div>
-
-<label>
-Jenis Pesanan *
-</label>
-
-<select
-name="jenis"
-id="jenis"
-required
->
-
-<option value="">
-Pilih jenis pesanan
-</option>
-
-<option>
-Buket Bunga
-</option>
-
-<option>
-Buket Uang
-</option>
-
-<option>
-Buket Snack
-</option>
-
-<option>
-Buket Boneka
-</option>
-
-<option>
-Buket Custom
-</option>
-
-<option>
-Mahar Nikah
-</option>
-
-<option>
-Make Up Graduation
-</option>
-
-<option>
-Make Up Event
-</option>
-
-</select>
-
-</div>
-
-
-<div>
-
-<label>
-Tanggal Dibutuhkan *
-</label>
-
-<input
-type="date"
-name="tanggal"
-id="tanggal"
-required
->
-
-</div>
-
-
-<div>
-
-<label>
-Jam
-</label>
-
-<input
-type="time"
-name="jam"
-id="jam"
->
-
-</div>
-
-
-<div>
-
-<label>
-Pengambilan / Pengiriman
-</label>
-
-<select
-name="ambil"
-id="ambil"
->
-
-<option>
-Ambil di tempat
-</option>
-
-<option>
-Diantar
-</option>
-
-</select>
-
-</div>
-
-
-<div>
-
-<label>
-Warna / Tema
-</label>
-
-<input
-type="text"
-name="tema"
-id="tema"
-placeholder="Contoh: sage green & cream"
->
-
-</div>
-
-
-<div>
-
-<label>
-Budget
-</label>
-
-<input
-type="text"
-name="budget"
-id="budget"
-placeholder="Contoh: Rp100.000"
->
-
-</div>
-
-
-<div class="full">
-
-<label>
-Tulisan / Ucapan
-</label>
-
-<textarea
-name="ucapan"
-id="ucapan"
-placeholder="Tuliskan ucapan..."
-></textarea>
-
-</div>
-
-
-<div class="full">
-
-<label>
-Catatan / Request
-</label>
-
-<textarea
-name="catatan"
-id="catatan"
-placeholder="Detail tambahan pesanan..."
-></textarea>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- PEMBAYARAN -->
-
-<div class="section payment">
-
-<h3>
-💳 Pembayaran
-</h3>
-
-
-<div class="grid">
-
-
-<div>
-
-<label>
-Total Harga *
-</label>
-
-<div class="money">
-
-<span>Rp</span>
-
-<input
-type="number"
-name="total_harga"
-id="total"
-min="1"
-required
-placeholder="0"
->
-
-</div>
-
-</div>
-
-
-<div>
-
-<label>
-DP *
-</label>
-
-<div class="money">
-
-<span>Rp</span>
-
-<input
-type="number"
-name="dp"
-id="dp"
-min="0"
-required
-value="0"
-placeholder="0"
->
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div class="summary-row">
-
-<span>
-Total Pesanan
-</span>
-
-<strong id="totalText">
-Rp0
-</strong>
-
-</div>
-
-
-<div class="summary-row">
-
-<span>
-DP
-</span>
-
-<strong id="dpText">
-Rp0
-</strong>
-
-</div>
-
-
-<div class="remaining">
-
-<span>
-Sisa Pelunasan
-</span>
-
-<strong id="sisaText">
-Rp0
-</strong>
-
-</div>
-
-
-<div
-id="status"
-class="status"
->
-
-Belum ada pembayaran
-
-</div>
-
-
-</div>
-
-
-<button
-type="submit"
-id="submitBtn"
->
-
-📲 Simpan & Kirim Pesanan
-
-</button>
-
-
-<div
-id="success"
-class="success"
->
-
-<div>
-✅ Pesanan sedang dikirim
-</div>
-
-<div class="number" id="orderNumber">
-Mohon tunggu...
-</div>
-
-</div>
-
-
-<div class="note">
-
-Pesanan akan langsung dicatat ke Google Sheets Hafa Florist.
-
-<br>
-
-Pesanan diproses setelah DP diterima.
-
-</div>
-
-
-</form>
-   <iframe
-  name="googleSheetFrame"
-  id="googleSheetFrame"
-  style="display:none;"
-></iframe>
-
-
-</div>
-
-</div>
-
-
-<!-- FRAME UNTUK MENGIRIM FORM -->
-
-<iframe
-name="submitFrame"
-id="submitFrame"
-></iframe>
-
+<div class="row"><span>Total Pesanan</span><strong id="tt">Rp0</strong></div>
+<div class="row"><span>DP</span><strong id="dt">Rp0</strong></div>
+<div class="rem"><span>Sisa Pelunasan</span><strong id="st">Rp0</strong></div>
+<div id="ps" class="status">Belum ada pembayaran</div></div>
+
+<button id="btn" type="submit">📲 Simpan & Kirim Pesanan</button>
+<div id="result" class="result"></div>
+<a id="waBtn" class="wa-btn" href="#" target="_blank" rel="noopener">💬 Buka WhatsApp Hafa Florist</a>
+<div class="note">Pesanan dicatat ke Google Sheets. Setelah berhasil disimpan, WhatsApp Hafa Florist akan dibuka.<br>Pesanan diproses setelah DP diterima.</div>
+</form></div></div>
 
 <script>
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxtG4SYgxSyx7JKhnJAJmXQ5YbIHaUU3iwEkJpETgT0HYmZveoJjoQTWBSCLhp5bAE/exec";
+const WA_HAFA="628985643104";
+const $=id=>document.getElementById(id);
+const rp=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(Number(n)||0);
 
-
-/* ==============================
-   NOMOR WHATSAPP
-============================== */
-
-const WA_HAFA =
-"628985643104";
-
-
-/* ==============================
-   FORMAT RUPIAH
-============================== */
-
-function rupiah(number){
-
-return new Intl.NumberFormat(
-"id-ID",
-{
-style:"currency",
-currency:"IDR",
-maximumFractionDigits:0
+function pay(){
+ const t=Number($("total").value)||0,d=Number($("dp").value)||0,s=Math.max(t-d,0);
+ $("tt").textContent=rp(t);$("dt").textContent=rp(d);$("st").textContent=rp(s);
+ const x=$("ps");x.className="status";
+ if(d>t&&t>0){x.textContent="⚠️ DP lebih besar dari total harga";x.classList.add("err")}
+ else if(t>0&&d===t){x.textContent="✓ LUNAS";x.classList.add("lunas")}
+ else if(d>0){x.textContent="✓ DP SUDAH DIBAYAR";x.classList.add("dp")}
+ else{x.textContent="Belum ada pembayaran"}
 }
-).format(
-Number(number) || 0
-);
+$("total").addEventListener("input",pay);
+$("dp").addEventListener("input",pay);
+pay();
 
-}
+function buatPesan(data,j){
+return `🌷 *FORM ORDER HAFA FLORIST*
 
+*NO. ORDER*
+${j.nomor_order}
 
-/* ==============================
-   ELEMENT
-============================== */
+*DATA PEMESAN*
+Nama: ${data.nama}
+No. WhatsApp: ${data.wa}
 
-const total =
-document.getElementById(
-"total"
-);
+*DETAIL PESANAN*
+Jenis: ${data.jenis}
+Budget: ${data.budget||"-"}
+Warna/Tema: ${data.tema||"-"}
+Tanggal: ${data.tanggal}
+Jam: ${data.jam||"-"}
+Pengambilan: ${data.ambil}
 
-const dp =
-document.getElementById(
-"dp"
-);
+*UCAPAN*
+${data.ucapan||"-"}
 
-const totalText =
-document.getElementById(
-"totalText"
-);
+*CATATAN / REQUEST*
+${data.catatan||"-"}
 
-const dpText =
-document.getElementById(
-"dpText"
-);
+*PEMBAYARAN*
+Total Harga: ${rp(j.total_harga)}
+DP: ${rp(j.dp)}
+Sisa Pelunasan: ${rp(j.sisa_pelunasan)}
+Status: ${j.status_pembayaran}
 
-const sisaText =
-document.getElementById(
-"sisaText"
-);
-
-const status =
-document.getElementById(
-"status"
-);
-
-
-/* ==============================
-   PEMBAYARAN
-============================== */
-
-function updatePayment(){
-
-const t =
-Number(total.value) || 0;
-
-const d =
-Number(dp.value) || 0;
-
-const s =
-Math.max(
-t - d,
-0
-);
-
-
-totalText.textContent =
-rupiah(t);
-
-dpText.textContent =
-rupiah(d);
-
-sisaText.textContent =
-rupiah(s);
-
-
-status.className =
-"status";
-
-
-if(d > t && t > 0){
-
-status.textContent =
-"⚠️ DP lebih besar dari total harga";
-
-status.classList.add(
-"error"
-);
-
+Mohon konfirmasi pesanan saya. Terima kasih 🤍`;
 }
 
-else if(
-t > 0 &&
-d === t
-){
-
-status.textContent =
-"✓ LUNAS";
-
-status.classList.add(
-"lunas"
-);
-
-}
-
-else if(d > 0){
-
-status.textContent =
-"✓ DP SUDAH DIBAYAR";
-
-status.classList.add(
-"dp"
-);
-
-}
-
-else{
-
-status.textContent =
-"BELUM DP";
-
-}
-
-}
-
-
-total.addEventListener(
-"input",
-updatePayment
-);
-
-dp.addEventListener(
-"input",
-updatePayment
-);
-
-updatePayment();
-
-
-/* ==============================
-   SUBMIT
-============================== */
-
-const form =
-document.getElementById(
-"orderForm"
-);
-
-const button =
-document.getElementById(
-"submitBtn"
-);
-
-
-form.addEventListener(
-"submit",
-function(event){
-
-const t =
-Number(total.value) || 0;
-
-const d =
-Number(dp.value) || 0;
-
-
-if(t <= 0){
-
-event.preventDefault();
-
-alert(
-"Total harga harus diisi."
-);
-
-return;
-
-}
-
-
-if(d > t){
-
-event.preventDefault();
-
-alert(
-"DP tidak boleh lebih besar dari total harga."
-);
-
-return;
-
-}
-
-
-/*
-   KARENA FORM DIKIRIM
-   KE IFRAME, HALAMAN
-   TIDAK AKAN PINDAH.
-*/
-
-button.disabled =
-true;
-
-button.textContent =
-"⏳ Menyimpan pesanan...";
-
-
-const success =
-document.getElementById(
-"success"
-);
-
-success.style.display =
-"block";
-
-document.getElementById(
-"orderNumber"
-).textContent =
-"Pesanan sedang dicatat...";
-
-
-/*
-   Siapkan pesan WA.
-*/
-
-const nama =
-document.getElementById(
-"nama"
-).value;
-
-const wa =
-document.getElementById(
-"wa"
-).value;
-
-const jenis =
-document.getElementById(
-"jenis"
-).value;
-
-const tanggal =
-document.getElementById(
-"tanggal"
-).value;
-
-const jam =
-document.getElementById(
-"jam"
-).value;
-
-const ambil =
-document.getElementById(
-"ambil"
-).value;
-
-const tema =
-document.getElementById(
-"tema"
-).value;
-
-const budget =
-document.getElementById(
-"budget"
-).value;
-
-const ucapan =
-document.getElementById(
-"ucapan"
-).value;
-
-const catatan =
-document.getElementById(
-"catatan"
-).value;
-
-
-const sisa =
-Math.max(
-t - d,
-0
-);
-
-
-let statusPembayaran =
-"BELUM DP";
-
-
-if(d === t){
-
-statusPembayaran =
-"LUNAS";
-
-}
-
-else if(d > 0){
-
-statusPembayaran =
-"DP SUDAH DIBAYAR";
-
-}
-
-
-const pesan =
-
-"🌷 *FORM ORDER HAFA FLORIST*"
-
-+
-
-"\n\n"
-
-+
-
-"*DATA PEMESAN*"
-
-+
-
-"\nNama: " +
-nama
-
-+
-
-"\nNo. WhatsApp: " +
-wa
-
-+
-
-"\n\n"
-
-+
-
-"*DETAIL PESANAN*"
-
-+
-
-"\nJenis: " +
-jenis
-
-+
-
-"\nBudget: " +
-(budget || "-")
-
-+
-
-"\nWarna/Tema: " +
-(tema || "-")
-
-+
-
-"\nTanggal: " +
-tanggal
-
-+
-
-"\nJam: " +
-(jam || "-")
-
-+
-
-"\nPengambilan: " +
-ambil
-
-+
-
-"\n\n"
-
-+
-
-"*UCAPAN*"
-
-+
-
-"\n" +
-(ucapan || "-")
-
-+
-
-"\n\n"
-
-+
-
-"*CATATAN / REQUEST*"
-
-+
-
-"\n" +
-(catatan || "-")
-
-+
-
-"\n\n"
-
-+
-
-"*PEMBAYARAN*"
-
-+
-
-"\nTotal Harga: " +
-rupiah(t)
-
-+
-
-"\nDP: " +
-rupiah(d)
-
-+
-
-"\nSisa Pelunasan: " +
-rupiah(sisa)
-
-+
-
-"\nStatus: " +
-statusPembayaran
-
-+
-
-"\n\n"
-
-+
-
-"Mohon konfirmasi pesanan saya. Terima kasih 🤍";
-
-
-/*
-   Tunggu sebentar agar
-   form sempat terkirim,
-   lalu buka WhatsApp.
-*/
-
-setTimeout(
-function(){
-
-window.open(
-"https://wa.me/" +
-WA_HAFA +
-"?text=" +
-encodeURIComponent(pesan),
-"_blank"
-);
-
-button.disabled =
-false;
-
-button.textContent =
-"📲 Simpan & Kirim Pesanan";
-
-},
-1200
-);
-
+$("form").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const t=Number($("total").value)||0,d=Number($("dp").value)||0;
+ if(t<=0){alert("Total harga harus diisi.");$("total").focus();return}
+ if(d>t){alert("DP tidak boleh lebih besar dari total harga.");$("dp").focus();return}
+
+ const data={
+  nama:$("nama").value.trim(),wa:$("wa").value.trim(),jenis:$("jenis").value,
+  budget:$("budget").value.trim(),tema:$("tema").value.trim(),ucapan:$("ucapan").value.trim(),
+  tanggal:$("tanggal").value,jam:$("jam").value,ambil:$("ambil").value,
+  catatan:$("catatan").value.trim(),total_harga:t,dp:d
+ };
+
+ const btn=$("btn"),result=$("result"),waBtn=$("waBtn");
+ btn.disabled=true;btn.textContent="⏳ Menyimpan pesanan...";
+ result.style.display="none";waBtn.style.display="none";
+
+ try{
+  const response=await fetch(SCRIPT_URL,{
+   method:"POST",
+   headers:{"Content-Type":"text/plain;charset=utf-8"},
+   body:JSON.stringify(data)
+  });
+  const text=await response.text();
+  let j;
+  try{j=JSON.parse(text)}
+  catch(err){throw new Error("Respons Apps Script tidak valid. Pastikan Web App sudah di-deploy dan aksesnya Anyone.")}
+
+  if(!j.success)throw new Error(j.message||"Apps Script menolak data order.");
+
+  const waUrl="https://wa.me/"+WA_HAFA+"?text="+encodeURIComponent(buatPesan(data,j));
+  result.innerHTML="✅ <b>Order "+j.nomor_order+" berhasil disimpan!</b><br>Total: "+rp(j.total_harga)+"<br>Sisa pelunasan: "+rp(j.sisa_pelunasan);
+  result.style.display="block";
+  waBtn.href=waUrl;
+  waBtn.style.display="block";
+
+  const win=window.open(waUrl,"_blank");
+  if(!win)result.innerHTML+="<br><br>📱 Silakan tekan tombol WhatsApp di bawah.";
+
+  $("form").reset();
+  pay();
+  result.scrollIntoView({behavior:"smooth",block:"center"});
+ }catch(err){
+  result.innerHTML="❌ <b>Gagal menyimpan pesanan.</b><br>"+err.message;
+  result.style.display="block";
+  result.scrollIntoView({behavior:"smooth",block:"center"});
+  console.error(err);
+ }finally{
+  btn.disabled=false;
+  btn.textContent="📲 Simpan & Kirim Pesanan";
+ }
 });
-
-
 </script>
-
-
 </body>
-
 </html>
